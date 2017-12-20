@@ -1,7 +1,7 @@
 {% set name = "halotools" %}
-{% set version = "0.5" %}
+{% set version = "0.6" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "7f5e8c3afcee35baa053a2c084d1b1301de70a285fce2391b7e46fedb53e041d" %}
+{% set hash_value = "6f718d645ad0e91b624b0a043f5a093a69aaf8b88c6bf660902a13971f07383d" %}
 
 package:
   name: '{{ name|lower }}'
