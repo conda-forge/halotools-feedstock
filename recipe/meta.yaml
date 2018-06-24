@@ -18,17 +18,19 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
     - setuptools
-    - numpy 1.9.*  # [not (win and py36)]
-    - numpy 1.11.*  # [win and py36]
-    - toolchain
+    - numpy        # [not (win and py36)]
+    - numpy         # [win and py36]
     - cython
   run:
     - python
     - astropy >=1
-    - numpy >=1.9  # [not (win and py36)]
-    - numpy >=1.11  # [win and py36]
+    - {{ pin_compatible('numpy') }}   # [not (win and py36)]
+    - {{ pin_compatible('numpy') }}   # [win and py36]
     - scipy
     - beautifulsoup4
     - requests
