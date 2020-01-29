@@ -36,6 +36,8 @@ requirements:
     - requests
 
 test:
+  requires:
+    - pytest-astropy
   imports:
     - halotools
     - halotools.empirical_models
