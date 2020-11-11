@@ -1,7 +1,5 @@
 {% set name = "halotools" %}
 {% set version = "0.7" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "a56e0bf32ac02a3bceacdc6669a6e1b7455f6365392ae35d2674558e2e2ab863" %}
 
 package:
   name: '{{ name|lower }}'
@@ -10,10 +8,10 @@ package:
 source:
   fn: '{{ name }}-{{ version }}.tar.gz'
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  'sha256': 'a56e0bf32ac02a3bceacdc6669a6e1b7455f6365392ae35d2674558e2e2ab863'
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
