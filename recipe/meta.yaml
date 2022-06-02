@@ -18,17 +18,18 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]    
   host:
     - python
     - setuptools
-    - numpy        # [not (win and py36)]
-    - numpy         # [win and py36]
+    - numpy
     - cython
   run:
     - python
     - astropy >=1
-    - {{ pin_compatible('numpy') }}   # [not (win and py36)]
-    - {{ pin_compatible('numpy') }}   # [win and py36]
+    - {{ pin_compatible('numpy') }}
     - scipy
     - beautifulsoup4
     - requests
