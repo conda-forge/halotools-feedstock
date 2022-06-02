@@ -6,9 +6,11 @@ package:
   version: '{{ version }}'
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  'sha256': 'a56e0bf32ac02a3bceacdc6669a6e1b7455f6365392ae35d2674558e2e2ab863'
+  sha256: a56e0bf32ac02a3bceacdc6669a6e1b7455f6365392ae35d2674558e2e2ab863
+  patches:
+    # patch from Matt Craig
+    - setup.py.diff
 
 build:
   number: 1
