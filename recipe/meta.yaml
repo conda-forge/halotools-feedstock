@@ -13,7 +13,7 @@ source:
     - setup.py.diff
 
 build:
-  number: 2
+  number: 3
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
