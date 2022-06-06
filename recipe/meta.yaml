@@ -17,6 +17,7 @@ build:
   # script: cython --cplus -v $(find halotools -name \*.pyx) && python setup.py install --offline --single-version-externally-managed --record=record.txt
   script:
    - cython --cplus -v $(find halotools -name \*.pyx)
+   # - {{ PYTHON }} setup.py install --offline --single-version-externally-managed --record=record.txt
    - {{ PYTHON }} -m pip install . -vv --install-option="--offline"
 
 requirements:
@@ -33,6 +34,7 @@ requirements:
     - numpy
     - cython
     - pip
+    - astropy-helpers
   run:
     - python
     - astropy >=1
