@@ -14,7 +14,10 @@ source:
 
 build:
   number: 3
-  script: cython --cplus -v $(find halotools -name \*.pyx) && python setup.py install --offline --single-version-externally-managed --record=record.txt
+  # script: cython --cplus -v $(find halotools -name \*.pyx) && python setup.py install --offline --single-version-externally-managed --record=record.txt
+  script:
+   - cython --cplus -v $(find halotools -name \*.pyx)
+   - {{ PYTHON }} -m pip install . -vv --install-option="--offline"
 
 requirements:
   build:
