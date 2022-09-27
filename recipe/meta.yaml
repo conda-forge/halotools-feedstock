@@ -27,9 +27,10 @@ requirements:
     - setuptools
     - numpy
     - cython
+    - extension_helpers
   run:
     - python
-    - astropy >=1
+    - astropy
     - {{ pin_compatible('numpy') }}
     - scipy
     - beautifulsoup4
