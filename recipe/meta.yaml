@@ -1,20 +1,18 @@
 {% set name = "halotools" %}
-{% set version = "0.7" %}
+{% set version = "0.8" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a56e0bf32ac02a3bceacdc6669a6e1b7455f6365392ae35d2674558e2e2ab863
-  patches:
-    # patch from Matt Craig
-    - setup.py.diff
+  sha256: d7e7039284a871c47a56ad9ccf470caa1e3f171dbac76b1d1ce24b3f21433f6f
 
 build:
-  number: 2
-  script: python setup.py install --offline --single-version-externally-managed --record=record.txt
+  number: 0
+  skip: true  # [py<39]
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
@@ -26,12 +24,15 @@ requirements:
     - numpy                                  # [build_platform != target_platform]    
   host:
     - python
-    - setuptools
+    - setuptools_scm
+    - pip
+    - wheel
     - numpy
     - cython
+    - extension-helpers
   run:
     - python
-    - astropy >=1
+    - astropy
     - {{ pin_compatible('numpy') }}
     - scipy
     - beautifulsoup4
