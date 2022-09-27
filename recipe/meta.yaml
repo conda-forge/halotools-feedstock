@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: true  # [py<3.9]
-  script: python setup.py install --offline --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
@@ -25,6 +25,7 @@ requirements:
   host:
     - python
     - setuptools_scm
+    - pip
     - wheel
     - numpy
     - cython
