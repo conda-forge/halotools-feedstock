@@ -27,7 +27,7 @@ requirements:
     - setuptools
     - numpy
     - cython
-    - extension_helpers
+    - extension-helpers
   run:
     - python
     - astropy
