@@ -1,5 +1,5 @@
 {% set name = "halotools" %}
-{% set version = "0.8" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d7e7039284a871c47a56ad9ccf470caa1e3f171dbac76b1d1ce24b3f21433f6f
+  sha256: defc8913f06e2bf69ca33b4167eb61fa5277810a5daedd1b84846186061a78e3
 
 build:
   number: 0
   skip: true  # [py<39]
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
