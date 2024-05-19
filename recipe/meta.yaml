@@ -10,7 +10,7 @@ source:
   sha256: 0de4087384d10063649df037c6656b05ce8a545fcfbcbad680922125355b7689
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -18,6 +18,7 @@ requirements:
   build:
     - cython                                 # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -33,7 +34,6 @@ requirements:
   run:
     - python
     - astropy
-    - {{ pin_compatible('numpy') }}
     - scipy
     - beautifulsoup4
     - requests
