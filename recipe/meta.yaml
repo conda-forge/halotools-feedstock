@@ -10,7 +10,7 @@ source:
   sha256: 42cea628a0e38673589bad803c2b5fdd45e101c38b7140536c47fd7698f64420
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -35,7 +35,6 @@ requirements:
   run:
     - python
     - astropy
-    - {{ pin_compatible('numpy') }}
     - scipy
     - beautifulsoup4
     - requests
