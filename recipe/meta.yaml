@@ -30,7 +30,7 @@ requirements:
     - pip
     - wheel
     - numpy
-    - cython
+    - cython =3.0.2
     - extension-helpers
   run:
     - python
