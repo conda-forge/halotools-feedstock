@@ -35,9 +35,11 @@ requirements:
   run:
     - python
     - astropy
+    - numpy <2
     - scipy
     - beautifulsoup4
     - requests
+    - h5py
 
 test:
   requires:
