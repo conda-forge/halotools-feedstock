@@ -10,7 +10,7 @@ source:
   sha256: 7f0dcd7019a8ab25d59ec20615dcaf7337e92357c9a9fff2b5637bb22425c7ba
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -34,7 +34,7 @@ requirements:
     - extension-helpers
   run:
     - python
-    - astropy
+    - astropy-base
     - numpy <2
     - scipy
     - beautifulsoup4
