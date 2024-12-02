@@ -94,7 +94,7 @@ about:
   home: http://halotools.readthedocs.io
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.rst
+  license_file: LICENSE.txt
   summary: Package for studying large scale structure, cosmology, and galaxy evolution using N-body simulations and halo models.
   description: |
     Halotools is a specialized python package for building and testing models
