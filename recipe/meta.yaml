@@ -1,5 +1,6 @@
 {% set name = "halotools" %}
 {% set version = "0.9.3" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -11,12 +12,11 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - cython                                 # [build_platform != target_platform]
+    - cython >=3.0.2                         # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -30,12 +30,12 @@ requirements:
     - pip
     - wheel
     - numpy
-    - cython
+    - cython >=3.0.2
     - extension-helpers
   run:
     - python
     - astropy-base
-    - numpy <2
+    - numpy >=2.0
     - scipy
     - beautifulsoup4
     - requests
