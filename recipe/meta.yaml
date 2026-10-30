@@ -1,5 +1,5 @@
 {% set name = "halotools" %}
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c794f466458def27106fa668ca2255896246b06f6be812889b84a4e9d6158aff
+  sha256: 4407b1929be179012454d24cc755bc13328595a34e2dfb779d7a50225c73adb5
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -31,13 +31,14 @@ requirements:
     - wheel
     - numpy
     - cython >=3.0.2
-    - extension-helpers
+    - extension-helpers 1.*
   run:
     - python
     - astropy-base
     - scipy
     - beautifulsoup4
     - requests
+    - h5py
 
 test:
   requires:
