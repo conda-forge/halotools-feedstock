@@ -31,13 +31,14 @@ requirements:
     - wheel
     - numpy
     - cython >=3.0.2
-    - extension-helpers
+    - extension-helpers 1.*
   run:
     - python
     - astropy-base
     - scipy
     - beautifulsoup4
     - requests
+    - h5py
 
 test:
   requires:
